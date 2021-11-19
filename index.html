@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="style.css">
+        <title>Fitness Calculators</title>
+    </head>
+    <body>
+
+    <!-- Table of calculators -->
+
+    <div class="container-main">
+    <caption id="top">Table of content</caption>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Calculator</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td>BMI</td>
+                <td>Body Mass Index calculator is a measurement of body fat based on height and weight</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>TDEE</td>
+                <td>Your Total Daily Energy Expenditure (TDEE) is an estimation of how many calories you burn per day</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>LBM</td>
+                <td>Your Lean Body Mass index is an estimation of how much lean mass you have, leaving the rest as bodyfat</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>LBS/KG</td>
+                <td>Convert Pounds and ounces to kilograms or vice versa</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <!-- BMI calculator -->
+    <div class="container-item">
+        <div class="item-header">
+            <h1>Body Mass Index Calculator</h1>
+        </div>
+            <div class="item-main">
+                <a href="#top"><button class="up-top-btn">Up to the top</button></a>
+            <form>
+                <label>Insert height (cm)</label>
+                <input type="text" name="bmiHeight" id="bmiHeight"> </br>
+                <label>Insert weight (kg)</label>
+                <input type="text" name="bmiWeight" id="bmiWeight"> </br>
+                <input type="button" class="calculate-btn" value="Calculate BMI" onclick="calculateBmi()"/>
+            </form>
+            </div>
+        <div class="item-footer">
+            <h3>Your BMI value is: <span id="bmiValue"></span></h1>
+            <h3>Your BMI class is: <span id="comment"></span> </h2>
+        </div>
+    </div>
+    <hr>
+
+    <!-- TDEE calculator -->
+    <div class="container-item">
+        <div class="item-header">
+            <h1>TDEE Calculator</h1>
+        </div>
+        <div class="item-main">
+                <a href="#top"><button class="up-top-btn">Up to the top</button></a>
+            <form>
+                <input type="radio" name="gender" id="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female">
+                <label for="male">Female</label> <br>
+                <label for="age">Age: </label>
+                <input type="text" name="age" id="tdeeAge" class="tdee-input"> </br>
+                <label for="height">Height: </label>
+                <input type="text" name="height" id="tdeeHeight" class="tdee-input"> </br>
+                <label for="weight">Weight: </label>
+                <input type="text" name="weight" id="tdeeWeight" class="tdee-input"> </br>
+                <label for="activity">Activity level: </label>
+                <select id="tdeeSelect">
+                    <option value="1.2" id="sedentary">Sedentary (little to no exercise)</option>
+                    <option value="1.375" id="light">Light Active (light exercise 1-3 days/week)</option>
+                    <option value="1.55" id="moderate">Moderately Active (moderate exercise 3-5 days/week</option>
+                    <option value="1.725" id="very">Very Active (heavy exercise 6-7 days/week)</option>
+                    <option value="1.9" id="extreme">Extremely Active (heavy exercise, hard labor job, training 2x/day)</option>
+                </select></br></br>
+            </form>
+            <button type="button" class="calculate-btn" value="Calculate TDEE" onclick="calculateTdee()">Calculate</button>
+        </div>
+        <div class="item-footer">
+            <h3>Your TDEE value is: <span id="tdeeValue">?</span> kcal</h3> 
+        </div>
+    </div>
+    <hr>
+
+    <!-- LBM Calculator-->
+    <div class="container-item">
+        <div class="item-header">
+            <h1>Lean Body Mass Calculator</h1>
+        </div>
+        <div class="item-main">
+            <a href="#top"><button class="up-top-btn">Up to the top</button></a>
+        <form>
+            <input type="radio" name="lbmGender" id="lbmMale">
+            <label for="male">Male</label>
+            <input type="radio" name="lbmGender" id="lbmFemale">
+            <label for="male">Female</label> </br>
+            <label>Insert height (cm)</label>
+            <input type="text" name="lbmHeight" id="lbmHeight"> </br>
+            <label>Insert weight (kg)</label>
+            <input type="text" name="lbmWeight" id="lbmWeight"> </br>
+            <input type="button" class="calculate-btn" value="Calculate LBM" onclick="calculateLbm()"/>
+        </form>
+        </div>
+        <div class="item-footer">
+            <h3>Your LBM value is: <span id="lbmvalue">?</span></h3>
+        </div>
+    </div>
+    <hr>
+
+    <!-- LBS to KG converter-->
+
+    <div class="container-item">
+        <div class="item-header">
+            <h1>LBS - KG Converter</h1>
+        </div>   
+        <div class="item-main">
+            <a href="#top"><button class="up-top-btn">Up to the top</button></a>
+            
+
+            <div id="container">
+                <input type="text" id="input"> <br>
+                <button class="calculate-btn" id="kgbtn">Convert to Kg</button><button class="calculate-btn" id="poundbtn">Convert to Pound</button><br>
+                <input type="text" id="output">
+            </div>
+            <script>
+                document.getElementById("kgbtn").addEventListener('click', function() {
+                    let input = document.getElementById('input').value;
+                    document.getElementById('output').value = input / 2.205 + " Kgs";
+                }) 
+                document.getElementById("poundbtn").addEventListener('click', function() {
+                    let input = document.getElementById('input').value;
+                    document.getElementById('output').value = input * 2.205 + " Pounds";
+                }) 
+            </script>
+        </div>
+        <br>
+    </div>
+    <hr>
+
+    </div>
+    </body>
+
+</html>

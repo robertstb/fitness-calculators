@@ -1,0 +1,132 @@
+/* Global CSS rules */
+
+body {
+    font-family: sans-serif, serif, 'Times New Roman';
+}
+
+
+/* CSS Styling for Tables */
+
+.container-main {
+    width: 50%; 
+    margin: auto; 
+}
+
+.content-table {
+    width: 95%;
+    border-collapse: collapse; 
+    margin: 10px 10px 10px 15px; 
+    border-radius: 5px 5px 0 0; 
+    overflow: hidden; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead th {
+    background-color: #003580; 
+    color: white; 
+}
+
+.content-table th,
+.content-table td {
+    padding: 10px 12px; 
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #E3E9F0; 
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #F3F3F3; 
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #0050B5; 
+}
+
+td {
+    text-align: left;
+}
+
+/* End of CSS Styling for Tables */
+
+
+/* CSS Styling for Items */
+
+.container-item {
+    width: 95%; 
+    background-color: white;
+    margin: 10px 10px 10px 15px; 
+    border-radius: 5px 5px 0 0; 
+    overflow: hidden; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.up-top-btn {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #F3F3F3; 
+    color: black; 
+    position: absolute; 
+    top: 80px; 
+    right: 30px;
+}
+
+.up-top-btn:hover {
+    background-color: #003580;
+    color: white;
+}
+
+input {
+    border-radius: 5px 5px 5px 5px;
+    border-color: black;
+    padding: 5px; 
+    border-width: thin; 
+    margin: 3px 1px;
+}
+
+.tdee-input {
+    width: 150px;
+    margin: 0 0 0 30px; 
+
+}
+
+#lbmHeight {
+    margin: 0 0 0 3px; 
+}
+
+#lbmWeight {
+    margin: 0 0 0 5px; 
+}
+
+/* CSS Styling for Item Header */
+
+.item-header {
+    text-align: center; 
+    color: #003580;
+}
+
+/* CSS Styling for Item Main */
+.item-main {
+    margin: 3px 0px 3px 20px;
+}
+
+/* CSS Styling for Item footer */
+
+.item-footer {
+    color: black;
+    margin: 3px 0px 3px 20px;
+
+}
+
+/* CSS Styling for Calculate Button */
+.calculate-btn {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #003580;
+    color: white;
+}
+
+.calculate-btn:hover {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #F3F3F3; 
+    color: black;
+}
